@@ -1,0 +1,110 @@
+:root{
+    --primary-color: #39B29D;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--primary-color);
+}
+.container{
+    background: #fff;
+    width: 450px;
+    padding: 30px;
+    border-radius: 5px;
+}
+.container header{
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.container .url-input{
+    margin: 30px 0;
+}
+.url-input .title{
+    font-size: 18px;
+}
+.url-input .field{
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+    position: relative;
+}
+.url-input .field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: #f1f1f7;
+    padding: 0 15px;
+    font-size: 15px;
+}
+.url-input .field .bottom-line{
+    height: 2px;
+    width: 100%;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+.url-input .field input:focus ~ .bottom-line,
+.url-input .field input:valid ~ .bottom-line{
+    transform: scale(1);
+}
+.preview-area .thumbnail{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: none;
+}
+.container .preview-area{
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 2px dashed #869B94;
+}
+.preview-area.active {
+    border: none
+}
+.preview-area.active .thumbnail{
+    display: block;
+}
+.download-icon{
+    width: 80px;
+}
+.preview-area.active .download-icon, 
+.preview-area.active  span{
+    display: none;
+}
+.container .download-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 53px;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    background: var(--primary-color);
+    border-radius: 5px;
+    margin: 30px 0 20px 0;
+    cursor: pointer;
+}
